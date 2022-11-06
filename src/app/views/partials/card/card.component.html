@@ -1,0 +1,15 @@
+<div class="card mb-4 box-shadow">
+    <img class="card-img-top" [src]="cards.iconUrl" style="height: 225px; width: 100%; display: block;"/>
+    <div class="card-body">
+      <p class="card-text">{{cards.description}}</p>
+      <small class="card-text">{{cards.longDescription}}</small>
+      <br/>
+      <br/>
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="viewCard()">View</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        </div>
+        <small class="text-muted float-end ms-auto">9 mins</small>
+      </div>
+</div>
+

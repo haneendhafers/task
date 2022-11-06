@@ -1,0 +1,29 @@
+
+<main role="main">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div *ngFor="let card of cards" class="col-md-4">
+          <app-card [cards]="card" (cardSelected)="onCardSelected(smModal,$event)"></app-card>             
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<ng-template #smModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">{{card.id}} ){{card.description}}</h5>
+    <button type="button" class="btn-close" (click)="modal.close('by: close icon')" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <img class="card-img-top" [src]="card.iconUrl" style="height: 225px; width: 100%; display: block;"/>
+    <p>{{card.longDescription}}</p>
+    <p>Category : {{card.category}}</p>
+    <p>lessons Count : {{card.lessonsCount}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.close('by: close button')">Close</button>
+  </div>
+</ng-template>
+
+
